@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+  </head>
+  <body>
+    <main>
+      <!---------- 왼쪽 화면 ------------------------>
+      <div class="left-page">
+        <!-- 사용자 그리팅 부분-->
+        <h1 id="greeting"></h1>
+        <input type="button" value="Logout" onclick="reset()" class="logout" />
+      </div>
+
+      <!-- 시계 부분 -->
+      <h1 id="clock">00:00:00</h1>
+
+      <!-- 날씨 부분 -->
+      <div id="weather">
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- 명언 부분 -->
+      <div id="quote">
+        <span></span><br />
+        <span></span>
+      </div>
+
+      <!---------- 오른쪽 화면 ------------------------>
+      <div class="right-page"></div>
+
+      <!-- 투두리스트 -->
+    </main>
+
+    <script src="js/greeting.js"></script>
+    <script src="js/backgound.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quote.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/calender.js"></script>
+  </body>
+</html>
