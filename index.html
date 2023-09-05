@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+  </head>
+  <body>
+    <main>
+      <!---------- 왼쪽 화면 ------------------------>
+      <div class="left-page">
+        <!-- 사용자 그리팅 부분-->
+        <h1 id="greeting">
+          ,오늘도 파이팅!
+          <input
+            type="button"
+            value="Logout"
+            onclick="reset()"
+            class="logout"
+          />
+        </h1>
+
+        <!-- 시계 부분 -->
+        <h1 id="clock">00:00:00</h1>
+
+        <!-- 날씨 부분 -->
+        <div id="weather">
+          <span id="current-temp"></span>
+          <span id="current-place"></span>
+          <img id="weather-icon" />
+        </div>
+
+        <!-- 명언 부분 -->
+        <div id="quote">
+          <span></span><br />
+          <span></span>
+        </div>
+      </div>
+      <!---------- 오른쪽 화면 ------------------------>
+      <div class="right-page">
+        <!-- 투두리스트 -->
+        <form id="todo-form" autocomplete="off">
+          <input id="todo-input" placeholder="write your todo" />
+          <button id="todo-add">추가</button>
+        </form>
+        <ul id="todo-list"></ul>
+      </div>
+    </main>
+
+    <script type="module" src="js/greeting.js"></script>
+    <script type="module" src="js/backgound.js"></script>
+    <script type="module" src="js/clock.js"></script>
+    <script type="module" src="js/quote.js"></script>
+    <script type="module" src="js/todo.js"></script>
+    <script type="module" src="js/weather.js"></script>
+    <script type="module" src="js/calender.js"></script>
+    <script type="module" src="js/config.js"></script>
+  </body>
+</html>
