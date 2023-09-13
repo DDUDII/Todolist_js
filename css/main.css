@@ -15,6 +15,10 @@ main {
   flex-direction: row;
 }
 
+.hidden {
+  display: none;
+}
+
 .left-page {
   width: 35%;
   height: 100%;
@@ -35,7 +39,11 @@ main {
   justify-content: space-between;
 }
 
-.logout {
+#login-form {
+  text-align: center;
+}
+
+.login {
   border: none;
   background: none;
   cursor: pointer;
@@ -45,10 +53,33 @@ main {
   transition: background-color 0.2s, opacity 0.2s, color 0.2s;
 }
 
-.logout:hover {
-  background-color: #f0f0f0;
+.login:hover {
+  background-color: rgba(237, 236, 236, 0.647);
   color: rgba(0, 0, 0, 0.7);
   opacity: 0.8;
+}
+
+.name-input {
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 16px; /* 모서리 둥글게 */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.29); /* 그림자 효과 */
+  padding: 10px 10px; /* 버튼 내부 여백 설정 (필요에 따라 조절) */
+  transition: background-color 0.2s, opacity 0.2s, color 0.2s;
+}
+
+.name-input:focus {
+  border: none;
+  background: rgba(237, 236, 236, 0.647);
+  outline: none;
+}
+
+#image {
+  margin-bottom: 20px;
+  width: 300px;
+  height: 150px;
+  border-radius: 15px;
 }
 
 #clock {
@@ -62,9 +93,10 @@ main {
 }
 
 #weather {
+  flex: 0.7;
   font-size: 16px;
   margin-bottom: 20px; /* clock 아래 여백 */
-  padding: 20px; /* 내부 여백 설정 */
+  padding: 10px; /* 내부 여백 설정 */
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.5); /* 투명한 박스 배경색 */
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* 은은한 그림자 효과 */
@@ -96,6 +128,7 @@ main {
 
 .right-page {
   /* 오른쪽 페이지 스타일 */
+
   flex: 3; /* 오른쪽 페이지가 남은 공간을 모두 차지하도록 설정 */
   padding: 20px;
   border-radius: 15px;

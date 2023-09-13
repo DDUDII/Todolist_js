@@ -11,15 +11,19 @@
     <main>
       <!---------- 왼쪽 화면 ------------------------>
       <div class="left-page">
+        <!-- 이미지 -->
+        <img id="image" src="/img/노을.jpg" />
+
         <!-- 사용자 그리팅 부분-->
         <h1 id="greeting">
-          ,오늘도 파이팅!
-          <input
-            type="button"
-            value="Logout"
-            onclick="reset()"
-            class="logout"
-          />
+          <form id="login-form" class="hidden">
+            <input
+              type="text"
+              placeholder="이름을 입력해 주세요"
+              class="name-input"
+            />
+            <button class="login">login</button>
+          </form>
         </h1>
 
         <!-- 시계 부분 -->
@@ -55,7 +59,6 @@
     <script type="module" src="js/quote.js"></script>
     <script type="module" src="js/todo.js"></script>
     <script type="module" src="js/weather.js"></script>
-    <script type="module" src="js/calender.js"></script>
     <script type="module" src="js/config.js"></script>
   </body>
 </html>
