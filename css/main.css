@@ -21,9 +21,18 @@ main {
 
 .left-page {
   width: 35%;
-  height: 100%;
+  height: 650px;
   /* 세로 배치를 위해 Flexbox 사용 */
   margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#image {
+  margin-bottom: 20px;
+  border-radius: 15px;
+  width: 100%;
+  height: 20%;
 }
 
 #greeting {
@@ -37,10 +46,15 @@ main {
   position: relative;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  height: 15%;
 }
 
 #login-form {
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .login {
@@ -52,8 +66,21 @@ main {
   padding: 10px 10px; /* 버튼 내부 여백 설정 (필요에 따라 조절) */
   transition: background-color 0.2s, opacity 0.2s, color 0.2s;
   margin-left: 20px;
+  float: right;
+  width: auto;
 }
-
+.logout {
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 16px; /* 모서리 둥글게 */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.29); /* 그림자 효과 */
+  padding: 10px 10px; /* 버튼 내부 여백 설정 (필요에 따라 조절) */
+  transition: background-color 0.2s, opacity 0.2s, color 0.2s;
+  margin-left: 20px;
+  float: right;
+  width: auto;
+}
 .login:hover {
   background-color: rgba(237, 236, 236, 0.647);
   color: rgba(0, 0, 0, 0.7);
@@ -69,6 +96,13 @@ main {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.29); /* 그림자 효과 */
   padding: 10px 10px; /* 버튼 내부 여백 설정 (필요에 따라 조절) */
   transition: background-color 0.2s, opacity 0.2s, color 0.2s;
+  width: 70%;
+}
+
+.name-input:hover {
+  background-color: rgba(237, 236, 236, 0.647);
+  color: rgba(0, 0, 0, 0.7);
+  opacity: 0.8;
 }
 
 .name-input:focus {
@@ -77,26 +111,23 @@ main {
   outline: none;
 }
 
-#image {
-  margin-bottom: 20px;
-  width: 300px;
-  height: 150px;
-  border-radius: 15px;
-}
-
 #clock {
-  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
   margin-bottom: 20px; /* clock 아래 여백 */
   padding: 20px; /* 내부 여백 설정 */
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.5); /* 투명한 박스 배경색 */
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* 은은한 그림자 효과 */
-  text-align: center;
+  max-width: 100%;
+  height: 15%;
 }
 
 #weather {
-  flex: 0.7;
-  font-size: 16px;
+  height: 20%;
+  font-size: 1rem;
   margin-bottom: 20px; /* clock 아래 여백 */
   padding: 10px; /* 내부 여백 설정 */
   border-radius: 15px;
@@ -104,22 +135,36 @@ main {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* 은은한 그림자 효과 */
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+#weather-container {
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+  width: 50%;
 }
 
 #current-temp {
-  margin: auto;
-  font-size: 24px;
+  margin-bottom: 10%;
+  font-size: 2rem;
+  text-align: center;
 }
 
 #current-place {
-  margin: auto;
+  font-size: 1rem;
+  text-align: center;
 }
 
 #weather-icon {
   font-size: 18px;
+  text-align: center;
+  margin: 5%;
+  width: 50%;
 }
 
 #quote {
+  height: 20%;
   font-size: 16px;
   margin: auto; /* clock 아래 여백 */
   padding: 20px; /* 내부 여백 설정 */
@@ -136,12 +181,13 @@ main {
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.397);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  height: 625px;
+  height: 650px;
 }
 
 #todo-form {
   display: flex;
   justify-content: center;
+
   overflow: auto;
 }
 
@@ -185,12 +231,12 @@ ul {
 #todo-list li span {
   margin-right: 20px;
   text-align: left;
-  flex: 7;
+  flex: 8;
 }
 
 #todo-list button {
   border: none;
   background: none;
   cursor: pointer;
-  flex: 3;
+  flex: 2;
 }

@@ -1,7 +1,7 @@
 const greeting = document.getElementById("greeting");
 const loginForm = document.getElementById("login-form");
 const nameInput = document.querySelector(".name-input");
-const loginBtn = document.querySelector("login");
+const loginBtn = document.querySelector(".login");
 
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
@@ -12,7 +12,7 @@ function saveName(username) {
   localStorage.setItem(USERNAME_KEY, username);
 }
 
-function clickLoginBtn() {
+function clickLoginBtn(event) {
   event.preventDefault();
   if (nameInput.value === "") {
     alert("이름을 입력해주세요!");
