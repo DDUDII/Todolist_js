@@ -18,16 +18,21 @@ function paintTodo(newTodo) {
   li.id = newTodo.id;
   const span = document.createElement("span"); ////js에서 span 태그 생성
   span.innerText = newTodo.text;
+  const input = document.createElement("input");
+  input.type = "text";
+  input.value = newTodo.text;
+  input.style.display = "none";
 
-  const rewriteBtn = document.createElement("button");
-  rewriteBtn.innerText = "수정";
+  const editBtn = document.createElement("button");
+  editBtn.innerText = "수정";
 
   const deletBtn = document.createElement("button");
   deletBtn.innerText = "삭제";
   deletBtn.addEventListener("click", delBtnClick);
 
   li.appendChild(span); //자식으로 넣어주기(변수)
-  li.appendChild(rewriteBtn);
+  li.appendChild(input);
+  li.appendChild(editBtn);
   li.appendChild(deletBtn);
   todoList.appendChild(li);
 }
