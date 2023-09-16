@@ -23,6 +23,10 @@ function paintTodo(newTodo) {
   input.value = newTodo.text;
   input.style.display = "none";
 
+  const checkBox = document.createElement("div");
+  checkBox.classList.add("checkbox");
+  checkBox.addEventListener("click", checkBoxClick);
+
   const editBtn = document.createElement("button");
   editBtn.innerText = "수정";
 
@@ -30,6 +34,7 @@ function paintTodo(newTodo) {
   deletBtn.innerText = "삭제";
   deletBtn.addEventListener("click", delBtnClick);
 
+  li.appendChild(checkBox);
   li.appendChild(span); //자식으로 넣어주기(변수)
   li.appendChild(input);
   li.appendChild(editBtn);
@@ -37,7 +42,32 @@ function paintTodo(newTodo) {
   todoList.appendChild(li);
 }
 
-//-------- 클릭시 발생하는 이벤트 함수 --------
+//-------- 체크박스 클릭시 발생하는 이벤트 함수 --------
+function checkBoxClick(event) {
+  const checkBox = event.target;
+  const li = checkBox.parentElement;
+  const id = li.id;
+  const span = li.querySelector("span");
+
+  const todoItem = todos.find((item) => item.id === parseInt(id));
+
+  if (todoItem) {
+    todoItem.check = !todoItem.check;
+    checkBox.classList.toggle("checked");
+    if (todoItem.check) {
+      span.style.textDecorationLine = "line-through";
+      span.style.color = "rgb(157, 157, 157)";
+      checkBox.innerText = "✔️";
+    } else {
+      span.style.textDecorationLine = "none";
+      span.style.color = "black";
+      checkBox.innerText = "";
+    }
+    saveTodo();
+  }
+}
+
+//-------- 추가버튼 클릭시 발생하는 이벤트 함수 --------
 function todoBtnClick(event) {
   event.preventDefault(); //form에서 클릭(submit)시 자동으로 새로고침 방지
   if (todoInput.value === "") {
@@ -49,6 +79,7 @@ function todoBtnClick(event) {
     const newTodoObj = {
       text: newTodo,
       id: Date.now(),
+      check: 0,
     };
 
     todos.push(newTodoObj);

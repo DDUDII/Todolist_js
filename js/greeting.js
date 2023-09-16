@@ -47,11 +47,10 @@ function loadUserName() {
 }
 
 function clickLogoutBtn() {
-  greeting.classList.add(HIDDEN_CLASSNAME);
   loginForm.classList.remove(HIDDEN_CLASSNAME);
+  greeting.classList.add(HIDDEN_CLASSNAME);
   localStorage.removeItem(USERNAME_KEY);
   nameInput.value = "";
-  console.log("logout이 작동합니다");
 }
 
 loadUserName();
