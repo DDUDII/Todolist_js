@@ -8,7 +8,7 @@ main {
   margin: 5%;
   padding: 10px;
   height: 90%;
-  width: 80%;
+  width: 85%;
   border-radius: 15px;
   border: 1px solid rgba(0, 0, 0, 0.01);
   display: flex;
@@ -172,6 +172,7 @@ main {
 }
 
 #quote {
+  width: 100%;
   height: 20%;
   font-size: 16px;
   margin: auto; /* clock 아래 여백 */
@@ -263,14 +264,26 @@ ul {
 }
 
 .checkbox.checked {
-  width: 22px;
-  height: 22px;
-  border: 2px solid gray;
-  border-radius: 50%;
-  transition: background-color 0.1s, border-color 0.1s;
-  margin-left: 10px;
-  margin-right: 10px;
   line-height: 1;
+}
+
+#todo-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+
+#delete-all-btn {
+  border: none;
+  background: transparent;
+  padding: 20px;
   cursor: pointer;
-  color: black;
+}
+
+#check-item-delbtn {
+  border: none;
+  background: transparent;
+  padding: 20px;
+  cursor: pointer;
 }
