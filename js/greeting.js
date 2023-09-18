@@ -47,10 +47,11 @@ function loadUserName() {
 }
 
 function clickLogoutBtn() {
-  loginForm.classList.remove(HIDDEN_CLASSNAME);
-  greeting.classList.add(HIDDEN_CLASSNAME);
   localStorage.removeItem(USERNAME_KEY);
   nameInput.value = "";
-}
+  loginForm.classList.remove(HIDDEN_CLASSNAME);
+  greeting.classList.add(HIDDEN_CLASSNAME);
 
+  location.reload();
+}
 loadUserName();
